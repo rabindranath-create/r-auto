@@ -2,9 +2,20 @@
 
 
 # Make sure working directory is the same as the script location (implicitly handled in GitHub Actions)
-print(getwd())
+# Print and confirm working directory
+wd <- getwd()
+cat("Current working directory is:", wd, "\n")
 
-dir.create("outputs/script4", recursive = TRUE, showWarnings = FALSE)
+# Create output folder inside the current directory
+output_dir <- file.path(wd, "outputs/script4")
+dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+cat("Created output directory:", output_dir, "\n")
+
+# Optional: list contents of outputs folder to verify
+if (dir.exists("outputs")) {
+  cat("Listing contents of 'outputs/' folder:\n")
+  print(list.files("outputs", recursive = TRUE))
+}
 
 # Load the helper script
 source("RD_and_DT_Algorithm_copy.R")  # Ensure this file is in the same directory
