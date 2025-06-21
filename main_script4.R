@@ -15,7 +15,7 @@ print("Files in 'outputs' before saving:")
 print(list.files("outputs", recursive = TRUE))
 
 # Save dummy test file just to verify
-writeLines("test", file.path(output_dir, ""test.txt"))
+writeLines("test", file.path(output_dir, "test.txt"))
 
 
 
