@@ -3,6 +3,8 @@
 # Make sure working directory is the same as the script location (implicitly handled in GitHub Actions)
 print(getwd())
 
+
+dir.create("outputs/script3", recursive = TRUE, showWarnings = FALSE)
 # Load the helper script
 source("RD_and_DT_Algorithm_copy.R")  # Ensure this file is in the same directory
 
@@ -16,7 +18,7 @@ results_0 <- data.frame(
 
 lambda <- 0
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -30,7 +32,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_0, file = "data_25_3_0.rds")
+saveRDS(results_0, file = "outputs/script3/data_25_3_0.rds")
 
 
 
@@ -45,7 +47,7 @@ results_05 <- data.frame(
 
 lambda <- 0.5
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(100+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -59,7 +61,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_05, file = "data_25_3_05.rds")
+saveRDS(results_05, file = "outputs/script3/data_25_3_05.rds")
 
 
 
@@ -74,7 +76,7 @@ results_1 <- data.frame(
 
 lambda <- 1
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(200+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -88,7 +90,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_1, file = "data_25_3_1.rds")
+saveRDS(results_1, file = "outputs/script3/data_25_3_1.rds")
 
 
 
@@ -102,7 +104,7 @@ results_15 <- data.frame(
 
 lambda <- 1.5
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(300+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -116,7 +118,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_15, file = "data_25_3_15.rds")
+saveRDS(results_15, file = "outputs/script3/data_25_3_15.rds")
 
 
 
@@ -130,7 +132,7 @@ results_2 <- data.frame(
 
 lambda <- 2
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(400+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -144,7 +146,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_2, file = "data_25_3_2.rds")
+saveRDS(results_2, file = "outputs/script3/data_25_3_2.rds")
 
 
 
@@ -158,7 +160,7 @@ results_25 <- data.frame(
 
 lambda <- 2.5
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(500+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -172,7 +174,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_25, file = "data_25_3_25.rds")
+saveRDS(results_25, file = "outputs/script3/data_25_3_25.rds")
 
 
 
@@ -188,7 +190,7 @@ results_3 <- data.frame(
 
 lambda <- 3
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(600+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -202,7 +204,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_3, file = "data_25_3_3.rds")
+saveRDS(results_3, file = "outputs/script3/data_25_3_3.rds")
 
 
 
@@ -216,7 +218,7 @@ results_35 <- data.frame(
 
 lambda <- 3.5
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(700+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -230,7 +232,7 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_35, file = "data_25_3_35.rds")
+saveRDS(results_35, file = "outputs/script3/data_25_3_35.rds")
 
 
 
@@ -245,7 +247,7 @@ results_4 <- data.frame(
 
 lambda <- 4
 
-for (i in 1:100) {
+for (i in 1:1) {
   set.seed(800+i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
   result <- ACS_Alg_C(obs_gen_para, k = 3, lambda)
@@ -259,4 +261,4 @@ for (i in 1:100) {
   )
 }
 
-saveRDS(results_4, file = "data_25_3_4.rds")
+saveRDS(results_4, file = "outputs/script3/data_25_3_4.rds")
