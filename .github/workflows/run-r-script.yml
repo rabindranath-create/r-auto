@@ -1,14 +1,14 @@
-name: Run 5 R Scripts in Parallel
+name: Run Multiple R Scripts in Parallel
 
 on:
-  workflow_dispatch:  # Allows manual run
+  workflow_dispatch:  # Trigger manually from the GitHub Actions tab
 
 jobs:
   run-r-scripts:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        script: [4, 5]
+        script: [1, 2, 3, 4, 5]  # Add more if needed
 
     name: Run main_script${{ matrix.script }}.R
     steps:
@@ -18,18 +18,20 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
-      - name: Install R packages
+      - name: Install required R packages
         run: |
           Rscript -e 'install.packages(c("spatial", "spatstat", "igraph", "dplyr"), repos = "https://cloud.r-project.org")'
 
-      - name: Run main_script${{ matrix.script }}.R
+      - name: Run R script main_script${{ matrix.script }}.R
         run: Rscript main_script${{ matrix.script }}.R
 
-      - name: List all .rds files created by script${{ matrix.script }}
-        run: find outputs/script${{ matrix.script }} -type f
+      - name: List output files for script${{ matrix.script }}
+        run: |
+          echo "Output files:"
+          find outputs/script${{ matrix.script }} -type f || echo "No output files found."
 
-      - name: Upload all .rds files from script${{ matrix.script }}
+      - name: Upload artifacts for script${{ matrix.script }}
         uses: actions/upload-artifact@v4
         with:
-          name: result-${{ matrix.script }}
+          name: results-script${{ matrix.script }}
           path: outputs/script${{ matrix.script }}/
