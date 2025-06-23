@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        script: [4, 5]  # Add more if needed
+        script: [2, 3, 4, 5]  # Add more if needed
 
     name: Run main_script${{ matrix.script }}.R
     steps:
